@@ -21,7 +21,7 @@ fun <VB : ViewBinding> Any.inflateViewBindingGeneric(
         .getMethod(
             "inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java
         )
-        .invoke(inflater, container, attachToRoot) as VB
+        .invoke(null, inflater, container, attachToRoot) as VB
 
 private fun <VB : ViewBinding> findViewBindingClass(any: Any): Class<VB> {
     any.allParameterizedTypes.forEach { type ->
